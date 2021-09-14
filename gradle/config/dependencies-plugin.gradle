@@ -1,0 +1,9 @@
+def version = [
+        dependencyManagement: '1.0.11.RELEASE',
+        springBoot          : '2.2.1.RELEASE',
+]
+
+dependencies {
+    classpath group: 'io.spring.gradle', name: 'dependency-management-plugin', version: version.dependencyManagement
+    classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: version.springBoot
+}

@@ -1,0 +1,21 @@
+dependencies {
+  implementation project.parent.project('domain')
+
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+  implementation group: 'org.flywaydb', name: 'flyway-core'
+
+  runtime('com.h2database:h2')
+
+  compileOnly("org.projectlombok:lombok")
+
+  annotationProcessor("org.projectlombok:lombok")
+  testAnnotationProcessor("org.projectlombok:lombok")
+  testCompileOnly("org.projectlombok:lombok")
+
+  testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+  testImplementation group: 'org.springframework.cloud', name: 'spring-cloud-contract-stub-runner'
+  testImplementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-contract-verifier'
+  testImplementation group: 'org.springframework.cloud', name: 'spring-cloud-contract-wiremock'
+}

@@ -1,0 +1,5 @@
+rootProject.name = 'hexagonal-arch-coffeee'
+
+include ':coffee-api'
+include ':coffee-api:domain'
+include ':coffee-api:infra'
