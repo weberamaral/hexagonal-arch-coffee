@@ -28,7 +28,10 @@ public class CreateCoffeeOrderUseCaseHandler implements UseCaseHandler<CoffeeOrd
       .status(OrderStatus.PENDING)
       .build();
     
+    log.info("Creating coffee order with status PENDING. {}", coffeeOrder);
+    
     coffeeOrderCreatedEventPort.publish(CoffeeCreatedEvent.from(coffeeOrder));
+    log.info("Publishing coffee order to prepare.");
     
     return coffeeOrder;
   }

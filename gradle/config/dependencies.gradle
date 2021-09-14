@@ -139,8 +139,6 @@ dependencyManagement {
 
       // https://mvnrepository.com/artifact/com.h2database/h2
       dependency group: 'com.h2database', name: 'h2', version: '1.4.200'
-      
-      //dependency group: 'org.flywaydb', name: 'flyway-core', version: '7.15.0'
 
     }
 }
