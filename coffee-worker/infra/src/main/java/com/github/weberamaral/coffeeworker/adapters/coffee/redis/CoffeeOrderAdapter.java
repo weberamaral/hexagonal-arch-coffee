@@ -13,5 +13,6 @@ public class CoffeeOrderAdapter implements CoffeeOrderPort {
   
   @Override
   public void persist(CoffeeOrder coffeeOrder) {
+    log.info("Persisting coffer order.... {}", coffeeOrder);
   }
 }

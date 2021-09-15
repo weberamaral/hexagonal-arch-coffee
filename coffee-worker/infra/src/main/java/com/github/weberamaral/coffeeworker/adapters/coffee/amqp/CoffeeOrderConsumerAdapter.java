@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.weberamaral.coffeeworker.adapters.coffee.amqp.message.CoffeeCreatedMessage;
-import com.github.weberamaral.coffeeworker.common.usecase.UseCaseHandler;
 import com.github.weberamaral.coffeeworker.common.usecase.VoidUseCaseHandler;
 import com.github.weberamaral.coffeeworker.configuration.CoffeeOrderAMQPConfiguration;
 import com.github.weberamaral.coffeeworker.order.usecase.TakeCoffeeOrder;
@@ -27,7 +26,11 @@ public class CoffeeOrderConsumerAdapter {
     CoffeeCreatedMessage coffeeCreatedMessage = read(message);
     log.info("take coffee order {}", coffeeCreatedMessage);
     
-    //takeCoffeeOrderVoidUseCaseHandler.handle();
+    TakeCoffeeOrder takeCoffeeOrder = TakeCoffeeOrder.builder()
+      .coffeeOrder(coffeeCreatedMessage.toModel())
+      .build();
+    
+    takeCoffeeOrderVoidUseCaseHandler.handle(takeCoffeeOrder);
   }
   
   private CoffeeCreatedMessage read(Message message) throws JsonProcessingException {

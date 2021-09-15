@@ -4,11 +4,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 
+import java.util.UUID;
+
 @Data
 @Builder
 @Getter
 public class CoffeeOrder {
-  private String id;
-  private String customerName;
-  private String status;
+  private final UUID id;
+  private final String customerName;
+  private final String coffeeType;
+  private final String coffeeSize;
+  private final String coffeeName;
+  private final String brewingMethod;
+  private OrderStatus status;
 }
