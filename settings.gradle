@@ -3,3 +3,7 @@ rootProject.name = 'hexagonal-arch-coffeee'
 include ':coffee-api'
 include ':coffee-api:domain'
 include ':coffee-api:infra'
+
+include ':coffee-worker'
+include ':coffee-worker:domain'
+include ':coffee-worker:infra'
